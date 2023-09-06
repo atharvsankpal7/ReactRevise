@@ -29,11 +29,11 @@ const Textform = (props) => {
     }
 
     let getWords = () => {
-        return text.trim().length;
+        return text.trim().length === 0 ? 0 : text.trim().split(" ").length;
     };
 
     let getCharacters = () => {
-        return text.trim().length === 0 ? 0 : text.trim().split(" ").length;
+        return text.trim().length;
     };
 
     let onclearTextClick = () => {
