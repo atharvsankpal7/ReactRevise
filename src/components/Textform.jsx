@@ -49,7 +49,7 @@ const Textform = (props) => {
 
     let currentWords = getWords();
 
-    let buttonClassName = `btn btn-primary mx-1 `;
+    let buttonClassName = `btn btn-primary mx-1 my-1`;
 
     return (
         <>
