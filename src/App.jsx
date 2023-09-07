@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Textform from "./components/Textform";
@@ -23,7 +25,7 @@ function App() {
     const [alert, setAlert] = useState(null);
 
     return (
-        <>
+        <Router>
             <Navbar
                 title="hello"
                 aboutText="external link"
@@ -37,16 +39,23 @@ function App() {
                 data-bs-theme={`${colorMode}`}
                 style={containerStyle}
             >
-                <Textform
-                    heading="Enter the text"
-                    textColor={textColor}
-                    colorMode={colorMode}
-                    toggleTheme={toggleTheme}
-                    setAlert={setAlert}
-                />
-                {/* <About /> */}
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <Textform
+                                heading="Enter the text"
+                                textColor={textColor}
+                                colorMode={colorMode}
+                                toggleTheme={toggleTheme}
+                                setAlert={setAlert}
+                            />
+                        }
+                    ></Route>
+                    <Route path="/about" element={<About />} />
+                </Routes>
             </div>
-        </>
+        </Router>
     );
 }
 

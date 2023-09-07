@@ -60,12 +60,13 @@ const Textform = (props) => {
                     <h1>{props.heading}</h1>
                     <textarea
                         autoFocus={true}
-                        className="form-control"
+                        className={`form-control border-${props.textColor}`}
                         id="myBox"
                         rows="8"
                         onChange={textOnChange}
                         value={text}
                         placeholder="Start Typing"
+                        style={{ resize: "none" }}
                     ></textarea>
                 </div>
                 <button className={buttonClassName} onClick={onUpperCaseClick}>
